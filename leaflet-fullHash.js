@@ -17,6 +17,17 @@
         if (hash.indexOf('#') === 0) {
             hash = hash.substr(1);
         }
+        // Example depricated hashes:
+        // 58.44i-3.51i3
+        // 58.44,-3.51,3
+        if(hash.indexOf(',') !== -1){
+            var parts = hash.split(',')
+            hashes = parts[2] + '/' + parts[0] + '/' + parts[1]
+        }
+        if(hash.indexOf('i') !== -1){
+            var parts = hash.split('i')
+            hashes = parts[2] + '/' + parts[0] + '/' + parts[1]
+        }
         var args = hash.split("/");
         if (args.length == 4) {
             var zoom = parseInt(args[0], 10),
