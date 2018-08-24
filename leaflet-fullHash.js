@@ -20,13 +20,14 @@
         // Example depricated hashes:
         // 58.44i-3.51i3
         // 58.44,-3.51,3
+        // This doesn't work.
         if(hash.indexOf(',') !== -1){
-            var parts = hash.split(',')
-            hash = parts[2] + '/' + parts[0] + '/' + parts[1]
+            var parts = hash.split(',');
+            hash = parts[2] + '/' + parts[0] + '/' + parts[1];
         }
         if(hash.indexOf('i') !== -1){
-            var parts = hash.split('i')
-            hash = parts[2] + '/' + parts[0] + '/' + parts[1]
+            var parts = hash.split('i');
+            hash = parts[2] + '/' + parts[0] + '/' + parts[1];
         }
         var args = hash.split("/");
         if (args.length == 4) {
